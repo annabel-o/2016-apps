@@ -1,0 +1,235 @@
+<!-- TOP BAR -->
+<div class="top">
+  <img src="snapchatlogo.png" class="snaplogo">
+  <h1>Chat</h1>
+  <p>search friends</p>
+</div>
+
+<!-- CHAT LIST -->
+<div class="list">
+
+  <div class="row clickable" onclick="openSnap('bae')">
+    <b>Bae 🤪💅</b>
+    <span>🟥 Tap to view · 2m ago</span>
+    <p>777🔥</p>
+  </div>
+
+  <div class="row clickable" onclick="openSnap('soph')">
+    <b>Soph💗💗</b>
+    <span>🟥 Tap to load · 10m ago</span>
+    <p>89🔥</p>
+  </div>
+
+  <div class="row clickable" onclick="openSnap('eddy')">
+    <b>Eddy 💕</b>
+    <span>💬 New chat · 4m ago</span>
+    <p>12🔥</p>
+  </div>
+
+  <div class="row clickable" onclick="openSnap('mom')">
+    <b>💘Mom☺️</b>
+    <span>💬 Sent a chat · 1h ago</span>
+    <p>1🔥</p>
+  </div>
+
+  <div class="row">
+    <b>Ella 🥰🥰🥰</b>
+    <span>🟪 Opened · 2h ago</span>
+    <p>900🔥</p>
+  </div>
+
+  <div class="row">
+    <b>Megannnn 💛</b>
+    <span>🟥 Delivered · 12m ago</span>
+    <p>118🔥</p>
+  </div>
+
+  <div class="row">
+    <b>💫 FRANKIE 💫</b>
+    <span>🟪 Opened · yesterday</span>
+    <p>301🔥</p>
+  </div>
+
+  <div class="row">
+    <b>Joe</b>
+    <span>🟥 Tap to load · 23m ago</span>
+  </div>
+
+  <div class="row">
+    <b>Kaileyy</b>
+    <span>🟥 Delivered · 3m ago</span>
+    <p>64🔥</p>
+  </div>
+
+  <div class="row">
+    <b>🐭Jerry</b>
+    <span>🟪 Opened · 5m ago</span>
+    <p>22🔥</p>
+  </div>
+
+  <div class="row">
+    <b>Anna 🤓🤓</b>
+    <span>🟥 Tap to load · 20m ago</span>
+    <p>156🔥</p>
+  </div>
+
+</div>
+
+<!-- SNAP POPUP -->
+<div id="snap">
+  <button class="close" onclick="closeSnap()">X</button>
+  <h1 id="snapText"></h1>
+  <img id="snapImage">
+</div>
+
+<!-- BACK BUTTON -->
+<br>
+<a href="index.html">
+  <button>BACK TO DESKTOP</button>
+</a>
+
+<style>
+/* WHOLE PAGE */
+body {
+  background: white;
+  font-family: Arial;
+  text-align: center;
+  margin: 0;
+}
+
+/* TOP BLUE BAR */
+.top {
+  background: #00b5ff;
+  color: white;
+  padding: 15px;
+  position: relative;
+}
+
+.snaplogo {
+  width: 45px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+.top h1 {
+  margin: 5px;
+}
+
+.top p {
+  background: white;
+  color: gray;
+  width: 350px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+/* CHAT LIST */
+.list {
+  width: 500px;
+  margin: 0 auto;
+  background: white;
+}
+
+.row {
+  text-align: left;
+  padding: 16px;
+  border-bottom: 1px solid lightgray;
+  font-size: 23px;
+  position: relative;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background: #eeeeee;
+}
+
+span {
+  display: block;
+  color: gray;
+  font-size: 15px;
+}
+
+.row p {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  margin: 0;
+  font-size: 18px;
+}
+
+/* SNAP VIEW */
+#snap {
+  display: none;
+  background: black;
+  color: white;
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 640px;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  padding: 8px;
+}
+
+#snap h1 {
+  margin-top: 260px;
+  font-size: 55px;
+}
+
+#snapImage {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* NORMAL BUTTONS */
+button {
+  font-size: 18px;
+  padding: 12px;
+  margin: 15px;
+}
+</style>
+
+<script>
+/* OPEN DIFFERENT SNAPS */
+function openSnap(name) {
+  document.getElementById("snap").style.display = "block";
+  document.getElementById("snapImage").style.display = "none";
+  document.getElementById("snapText").style.display = "block";
+
+  if (name == "bae") {
+    document.getElementById("snapText").innerHTML = "is this cute or delete?";
+  }
+
+  if (name == "soph") {
+    document.getElementById("snapText").innerHTML = "S";
+  }
+
+  if (name == "eddy") {
+    document.getElementById("snapText").innerHTML = "wyd";
+  }
+
+  if (name == "mom") {
+    document.getElementById("snapText").innerHTML = "where are you??";
+  }
+}
+
+/* CLOSE SNAP */
+function closeSnap() {
+  document.getElementById("snap").style.display = "none";
+}
+</script>

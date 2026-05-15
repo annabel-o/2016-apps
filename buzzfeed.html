@@ -1,0 +1,94 @@
+
+<h1>BUZZFEED QUIZ</h1>
+
+<img src="BuzzfeedLogo.png" width="300">
+
+<h2>Which iconic 2016 meme are you?</h2>
+
+<p>1. Pick your 2016 personality.</p>
+<button onclick="pick('a')">A: Vans are my favorite shoe</button>
+<button onclick="pick('b')">B: I make everything dramatic</button>
+<button onclick="pick('c')">C: I think every triangle means something</button>
+
+<p>2. Pick your YouTube search history.</p>
+<button onclick="pick('a')">A: white vans compilation</button>
+<button onclick="pick('b')">B: sad vine edits 2016</button>
+<button onclick="pick('c')">C: hidden messages exposed</button>
+
+<p>3. Pick your reaction to a minor inconvenience.</p>
+<button onclick="pick('a')">A: Laugh and make it a meme</button>
+<button onclick="pick('b')">B: Act like it changed history</button>
+<button onclick="pick('c')">C: Say "wait... this was planned"</button>
+
+<p>4. Pick your internet vibe.</p>
+<button onclick="pick('a')">A: Vine compilation energy</button>
+<button onclick="pick('b')">B: Emotional group chat memorial post</button>
+<button onclick="pick('c')">C: Low quality conspiracy video</button>
+
+<p>5. Pick your ideal 2016 activity.</p>
+<button onclick="pick('a')">A: yelling "what are those"</button>
+<button onclick="pick('b')">B: posting a dramatic caption</button>
+<button onclick="pick('c')">C: watching conspiracy videos at 2 AM</button>
+
+<button onclick="showResult()">SHOW MY RESULT</button>
+
+<h2 id="resultText"></h2>
+<img id="resultImage" width="300">
+
+<br><br>
+
+<a href="index.html">
+  <button>BACK TO DESKTOP</button>
+</a>
+
+<style>
+body {
+  background: white;
+  text-align: center;
+  font-family: Arial;
+}
+
+button {
+  display: block;
+  margin: 15px auto;
+  padding: 15px;
+  font-size: 20px;
+}
+</style>
+
+<script>
+let a = 0;
+let b = 0;
+let c = 0;
+
+function pick(choice) {
+  if (choice == "a") {
+    a++;
+  }
+
+  if (choice == "b") {
+    b++;
+  }
+
+  if (choice == "c") {
+    c++;
+  }
+}
+
+function showResult() {
+  if (a >= b && a >= c) {
+    document.getElementById("resultText").innerHTML = "You got: Damn Daniel";
+    document.getElementById("resultImage").src = "DamnDaniel.jpeg";
+  }
+
+  else if (b >= a && b >= c) {
+    document.getElementById("resultText").innerHTML = "You got: Harambe";
+    document.getElementById("resultImage").src = "Harambe.jpeg";
+  }
+
+  else {
+    document.getElementById("resultText").innerHTML = "You got: Illuminati Confirmed";
+    document.getElementById("resultImage").src = "Illuminati.jpeg";
+  }
+}
+</script>

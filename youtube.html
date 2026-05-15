@@ -1,0 +1,236 @@
+
+<img src="youtube2016.png" width="1400">
+
+<p class="hint">click around. some memories respond.</p>
+
+<button class="pasta" onclick="showPasta()"></button>
+<button class="surfer" onclick="showSurfer()"></button>
+<button class="john" onclick="showJohn()"></button>
+<button class="doom" onclick="showDoom()"></button>
+<button class="signin" onclick="showSignIn()"></button>
+<button class="music" onclick="showMusic()"></button>
+
+<div id="pastaBox" class="popup">
+  <h2>YOU WATCHED WORTH IT 🍝</h2>
+  <p>suddenly wanted expensive food you could not afford</p>
+</div>
+
+<div id="surferBox" class="popup">
+  <h2>RECOMMENDED FOR YOU</h2>
+  <p>EPIC SILVER SURFER HALLOWEEN COSTUME NYC!</p>
+</div>
+
+<div id="johnBox" class="popup">
+  <h2>TRENDING NOW</h2>
+  <p>breaking news. drama. discourse. more content.</p>
+</div>
+
+<div id="doomBox" class="popup">
+  <h2>ARE YOU STILL WATCHING?</h2>
+  <p>UP NEXT IN 5...</p>
+</div>
+
+<div id="signInBox" class="popup">
+  <h2>SIGN IN TO CONTINUE</h2>
+  <p>Email: teenagegirl2016@gmail.com</p>
+  <p>Password: ********</p>
+  <p><b>ERROR:</b> wrong password. try your middle school password.</p>
+</div>
+
+<div id="musicBox" class="popup">
+  <h2>2016 MUSIC RECOMMENDATIONS 🎵</h2>
+  <p>Sorry — Justin Bieber</p>
+  <p>Closer — The Chainsmokers</p>
+  <p>Hello — Adele</p>
+  <p>Work — Rihanna</p>
+</div>
+
+<br><br>
+
+<a href="index.html">
+  <button>BACK TO DESKTOP</button>
+</a>
+
+<style>
+body {
+  text-align: center;
+  background: white;
+}
+
+button {
+  font-size: 20px;
+  padding: 15px;
+}
+
+.hint {
+  position: absolute;
+  top: 35px;
+  left: 400px;
+  background: rgba(300,245,255,0.8);
+  color: black;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.pasta {
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  width: 500px;
+  height: 140px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pasta:hover {
+  opacity: 0.1;
+  background: red;
+}
+
+.surfer {
+  position: absolute;
+  top: 225px;
+  left: 300px;
+  width: 500px;
+  height: 140px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.surfer:hover {
+  opacity: 0.2;
+  background: blue;
+}
+
+.john {
+  position: absolute;
+  top: 485px;
+  left: 300px;
+  width: 500px;
+  height: 140px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.john:hover {
+  opacity: 0.2;
+  background: orange;
+}
+
+.doom {
+  position: absolute;
+  top: 615px;
+  left: 300px;
+  width: 500px;
+  height: 140px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.doom:hover {
+  opacity: 0.2;
+  background: purple;
+}
+
+.signin {
+  position: absolute;
+  top: 590px;
+  left: 10px;
+  width: 80px;
+  height: 50px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.signin:hover {
+  opacity: 0.3;
+  background: lightblue;
+}
+
+.music {
+  position: absolute;
+  top: 188px;
+  left: 10px;
+  width: 140px;
+  height: 50px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.music:hover {
+  opacity: 0.3;
+  background: pink;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  background: white;
+  color: black;
+  border: 5px solid red;
+  padding: 20px;
+  width: 320px;
+}
+
+#pastaBox {
+  top: 120px;
+  left: 850px;
+}
+
+#surferBox {
+  top: 300px;
+  left: 850px;
+}
+
+#johnBox {
+  top: 550px;
+  left: 850px;
+}
+
+#doomBox {
+  top: 720px;
+  left: 850px;
+}
+
+#signInBox {
+  top: 500px;
+  left: 500px;
+}
+
+#musicBox {
+  top: 250px;
+  left: 500px;
+}
+</style>
+
+<script>
+function showPasta() {
+  document.getElementById("pastaBox").style.display = "block";
+}
+
+function showSurfer() {
+  document.getElementById("surferBox").style.display = "block";
+}
+
+function showJohn() {
+  document.getElementById("johnBox").style.display = "block";
+}
+
+function showDoom() {
+  document.getElementById("doomBox").style.display = "block";
+}
+
+function showSignIn() {
+  document.getElementById("signInBox").style.display = "block";
+}
+
+function showMusic() {
+  document.getElementById("musicBox").style.display = "block";
+}
+</script>
+
+
+
+
+
+
