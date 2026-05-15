@@ -1,4 +1,3 @@
-
 <h1>BUZZFEED QUIZ</h1>
 
 <img src="BuzzfeedLogo.png" width="300">
@@ -6,31 +5,31 @@
 <h2>Which iconic 2016 meme are you?</h2>
 
 <p>1. Pick your 2016 personality.</p>
-<button onclick="pick('a')">A: Vans are my favorite shoe</button>
-<button onclick="pick('b')">B: I make everything dramatic</button>
-<button onclick="pick('c')">C: I think every triangle means something</button>
+<button onclick="pick(1, 'a', this)">A: Vans are my favorite shoe</button>
+<button onclick="pick(1, 'b', this)">B: I make everything dramatic</button>
+<button onclick="pick(1, 'c', this)">C: I think every triangle means something</button>
 
 <p>2. Pick your YouTube search history.</p>
-<button onclick="pick('a')">A: white vans compilation</button>
-<button onclick="pick('b')">B: sad vine edits 2016</button>
-<button onclick="pick('c')">C: hidden messages exposed</button>
+<button onclick="pick(2, 'a', this)">A: white vans compilation</button>
+<button onclick="pick(2, 'b', this)">B: sad vine edits 2016</button>
+<button onclick="pick(2, 'c', this)">C: hidden messages exposed</button>
 
 <p>3. Pick your reaction to a minor inconvenience.</p>
-<button onclick="pick('a')">A: Laugh and make it a meme</button>
-<button onclick="pick('b')">B: Act like it changed history</button>
-<button onclick="pick('c')">C: Say "wait... this was planned"</button>
+<button onclick="pick(3, 'a', this)">A: Laugh and make it a meme</button>
+<button onclick="pick(3, 'b', this)">B: Act like it changed history</button>
+<button onclick="pick(3, 'c', this)">C: Say "wait... this was planned"</button>
 
 <p>4. Pick your internet vibe.</p>
-<button onclick="pick('a')">A: Vine compilation energy</button>
-<button onclick="pick('b')">B: Emotional group chat memorial post</button>
-<button onclick="pick('c')">C: Low quality conspiracy video</button>
+<button onclick="pick(4, 'a', this)">A: Vine compilation energy</button>
+<button onclick="pick(4, 'b', this)">B: Emotional group chat memorial post</button>
+<button onclick="pick(4, 'c', this)">C: Low quality conspiracy video</button>
 
 <p>5. Pick your ideal 2016 activity.</p>
-<button onclick="pick('a')">A: yelling "what are those"</button>
-<button onclick="pick('b')">B: posting a dramatic caption</button>
-<button onclick="pick('c')">C: watching conspiracy videos at 2 AM</button>
+<button onclick="pick(5, 'a', this)">A: yelling "what are those"</button>
+<button onclick="pick(5, 'b', this)">B: posting a dramatic caption</button>
+<button onclick="pick(5, 'c', this)">C: watching conspiracy videos at 2 AM</button>
 
-<button onclick="showResult()">SHOW MY RESULT</button>
+<button onclick="showResult()"><b>SHOW MY RESULT</b></button>
 
 <h2 id="resultText"></h2>
 <img id="resultImage" width="300">
@@ -53,29 +52,88 @@ button {
   margin: 15px auto;
   padding: 15px;
   font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.clicked {
+  background: red;
+  color: white;
 }
 </style>
 
 <script>
-let a = 0;
-let b = 0;
-let c = 0;
+let answers = {};
 
-function pick(choice) {
-  if (choice == "a") {
-    a++;
+function pick(questionNumber, choice, button) {
+  let allButtons = document.querySelectorAll("button");
+
+  if (answers[questionNumber] == choice) {
+    button.classList.remove("clicked");
+    delete answers[questionNumber];
   }
 
-  if (choice == "b") {
-    b++;
-  }
+  else {
+    answers[questionNumber] = choice;
 
-  if (choice == "c") {
-    c++;
+    if (questionNumber == 1) {
+      allButtons[0].classList.remove("clicked");
+      allButtons[1].classList.remove("clicked");
+      allButtons[2].classList.remove("clicked");
+    }
+
+    if (questionNumber == 2) {
+      allButtons[3].classList.remove("clicked");
+      allButtons[4].classList.remove("clicked");
+      allButtons[5].classList.remove("clicked");
+    }
+
+    if (questionNumber == 3) {
+      allButtons[6].classList.remove("clicked");
+      allButtons[7].classList.remove("clicked");
+      allButtons[8].classList.remove("clicked");
+    }
+
+    if (questionNumber == 4) {
+      allButtons[9].classList.remove("clicked");
+      allButtons[10].classList.remove("clicked");
+      allButtons[11].classList.remove("clicked");
+    }
+
+    if (questionNumber == 5) {
+      allButtons[12].classList.remove("clicked");
+      allButtons[13].classList.remove("clicked");
+      allButtons[14].classList.remove("clicked");
+    }
+
+    button.classList.add("clicked");
   }
 }
 
 function showResult() {
+  if (Object.keys(answers).length < 5) {
+    document.getElementById("resultText").innerHTML = "Please answer all 5 questions first!";
+    return;
+  }
+
+  let a = 0;
+  let b = 0;
+  let c = 0;
+
+  for (let question in answers) {
+    if (answers[question] == "a") {
+      a++;
+    }
+
+    if (answers[question] == "b") {
+      b++;
+    }
+
+    if (answers[question] == "c") {
+      c++;
+    }
+  }
+
   if (a >= b && a >= c) {
     document.getElementById("resultText").innerHTML = "You got: Damn Daniel";
     document.getElementById("resultImage").src = "DamnDaniel.jpeg";
